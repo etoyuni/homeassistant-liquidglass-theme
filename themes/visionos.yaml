@@ -178,6 +178,11 @@ visionos:
     }
   card-mod-root: |
     /* Dashboard tabs as rounded "cloud" pills (HA < 2025.10: sl-tab, HA >= 2025.10: ha-tab-group-tab) */
+    sl-tab-group,
+    ha-tab-group {
+      align-self: center !important;
+      height: auto !important;
+    }
     sl-tab,
     ha-tab-group-tab {
       margin: 0 4px;
