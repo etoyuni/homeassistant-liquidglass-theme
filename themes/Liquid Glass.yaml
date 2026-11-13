@@ -157,13 +157,19 @@ Liquid Glass:
       box-shadow: none !important;
     }
 
-    /* Markdown card stays transparent, no glass rim */
-    :host(hui-markdown-card) ha-card {
+    /* Markdown card stays transparent, no glass rim.
+       Dual selectors: :host() for modern hui-card path,
+       classes for the legacy path (e.g. cards inside a grid card) */
+    :host(hui-markdown-card) ha-card,
+    ha-card.text-only,
+    ha-card.with-header {
       background: none !important;
       backdrop-filter: none !important;
       box-shadow: none !important;
     }
-    :host(hui-markdown-card) ha-card::before {
+    :host(hui-markdown-card) ha-card::before,
+    ha-card.text-only::before,
+    ha-card.with-header::before {
       content: none !important;
       box-shadow: none !important;
     }
