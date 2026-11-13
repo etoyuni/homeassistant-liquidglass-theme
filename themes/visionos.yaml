@@ -222,6 +222,7 @@ visionos:
     }
     :host(hui-heading-card) ha-card::before {
       content: none !important;
+      box-shadow: none !important;
     }
 
     /* Energy dashboard */
