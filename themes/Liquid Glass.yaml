@@ -92,11 +92,17 @@ Liquid Glass:
 
   card-mod-theme: "Liquid Glass"
   app-header-selection-bar-color: transparent
+  # Kill the divider between the tab bar and the content
+  app-header-border-bottom: none
+  bar-box-shadow: none
+  ha-tab-track-color: transparent
   card-mod-root: |
-    /* Dashboard tabs as rounded "cloud" pills */
+    /* Dashboard tabs as rounded "cloud" pills (HA < 2025.10: sl-tab, HA >= 2025.10: ha-tab-group-tab) */
+    sl-tab,
     ha-tab-group-tab {
       margin: 0 4px;
     }
+    sl-tab::part(base),
     ha-tab-group-tab::part(base) {
       border-radius: 18px;
       padding: 0.3em 0.9em !important;
@@ -104,11 +110,15 @@ Liquid Glass:
       box-shadow: 1px 1px 2px -1px rgba(255, 255, 255, 0.30) inset, -1px -1px 2px -1px rgba(255, 255, 255, 0.20) inset;
       transition: background 0.2s ease-in-out;
     }
-    ha-tab-group-tab[active]::part(base) {
+    sl-tab[active]::part(base),
+    sl-tab[aria-selected="true"]::part(base),
+    ha-tab-group-tab[active]::part(base),
+    ha-tab-group-tab[aria-selected="true"]::part(base) {
       background: color-mix(in srgb, var(--primary-color) 45%, transparent);
       box-shadow: 2px 2px 0.5px -2.5px rgba(255, 255, 255, 0.35) inset, -1px -1px 1px -1px rgba(255, 255, 255, 0.25) inset;
     }
     @media (hover: hover) {
+      sl-tab:hover:not([active])::part(base),
       ha-tab-group-tab:hover:not([active])::part(base) {
         background: rgba(255, 255, 255, 0.18);
       }
