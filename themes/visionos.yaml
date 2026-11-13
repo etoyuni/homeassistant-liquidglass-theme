@@ -84,6 +84,7 @@ visionos:
   # Header
   app-header-backdrop-filter: var(--ha-card-backdrop-filter)
   app-header-edit-background-color: rgba(0, 0, 0, 0.2)
+  app-header-selection-bar-color: transparent
   # Colors
   red-color: "#FF453A"
   pink-color: "#FF375F"
@@ -163,6 +164,27 @@ visionos:
   card-mod-sidebar: |
     :host {
       background: none !important;
+    }
+  card-mod-root: |
+    /* Dashboard tabs as rounded "cloud" pills */
+    ha-tab-group-tab {
+      margin: 0 4px;
+    }
+    ha-tab-group-tab::part(base) {
+      border-radius: 999px;
+      padding: 0.3em 0.9em !important;
+      background: rgba(255, 255, 255, 0.10);
+      box-shadow: 0.5px 0.5px 1px 0px rgba(255, 255, 255, 0.25) inset, -0.5px -0.5px 1px 0px rgba(255, 255, 255, 0.08) inset;
+      transition: background 0.2s ease-in-out;
+    }
+    ha-tab-group-tab[active]::part(base) {
+      background: color-mix(in srgb, var(--primary-color) 40%, transparent);
+      box-shadow: 0.5px 0.5px 1px 0px rgba(255, 255, 255, 0.30) inset, -0.5px -0.5px 1px 0px rgba(255, 255, 255, 0.10) inset;
+    }
+    @media (hover: hover) {
+      ha-tab-group-tab:hover:not([active])::part(base) {
+        background: rgba(255, 255, 255, 0.18);
+      }
     }
   card-mod-card: |
     ha-card {

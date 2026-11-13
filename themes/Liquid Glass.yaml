@@ -91,6 +91,28 @@ Liquid Glass:
     }
 
   card-mod-theme: "Liquid Glass"
+  app-header-selection-bar-color: transparent
+  card-mod-root: |
+    /* Dashboard tabs as rounded "cloud" pills */
+    ha-tab-group-tab {
+      margin: 0 4px;
+    }
+    ha-tab-group-tab::part(base) {
+      border-radius: 18px;
+      padding: 0.3em 0.9em !important;
+      background: rgba(255, 255, 255, 0.10);
+      box-shadow: 1px 1px 2px -1px rgba(255, 255, 255, 0.30) inset, -1px -1px 2px -1px rgba(255, 255, 255, 0.20) inset;
+      transition: background 0.2s ease-in-out;
+    }
+    ha-tab-group-tab[active]::part(base) {
+      background: color-mix(in srgb, var(--primary-color) 45%, transparent);
+      box-shadow: 2px 2px 0.5px -2.5px rgba(255, 255, 255, 0.35) inset, -1px -1px 1px -1px rgba(255, 255, 255, 0.25) inset;
+    }
+    @media (hover: hover) {
+      ha-tab-group-tab:hover:not([active])::part(base) {
+        background: rgba(255, 255, 255, 0.18);
+      }
+    }
   card-mod-card-yaml: |
     .: |
       ha-card {
