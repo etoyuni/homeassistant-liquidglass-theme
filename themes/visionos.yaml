@@ -219,6 +219,7 @@ visionos:
     :host(hui-heading-card) ha-card {
       background: none !important;
       backdrop-filter: none !important;
+      box-shadow: none !important;
     }
     :host(hui-heading-card) ha-card::before {
       content: none !important;
