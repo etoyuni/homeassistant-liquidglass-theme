@@ -117,7 +117,8 @@ Liquid Glass:
     sl-tab,
     ha-tab-group-tab {
       margin: 0 4px;
-      /* HA stretches tabs to the full header height; shrink them back to pill size */
+      /* .nav stretches tabs to full header height via flex; center instead */
+      align-self: center !important;
       height: auto !important;
     }
     sl-tab::part(base),
