@@ -167,6 +167,15 @@ visionos:
       display: none !important;
     }
   card-mod-root: |
+    /* Hide search & assist header buttons on desktop (order: search, assist, edit).
+       They stay reachable via the E / A keyboard shortcuts.
+       The :has() guard keeps this to wide screens only — on narrow screens
+       search/assist already collapse into the three-dot menu. */
+    .action-items:has(ha-tooltip:nth-of-type(3)) ha-tooltip:nth-of-type(1),
+    .action-items:has(ha-tooltip:nth-of-type(3)) ha-tooltip:nth-of-type(2) {
+      display: none !important;
+    }
+
     /* Dashboard tabs as rounded "cloud" pills (HA < 2025.10: sl-tab, HA >= 2025.10: ha-tab-group-tab) */
     sl-tab-group,
     ha-tab-group {
