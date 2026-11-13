@@ -80,16 +80,6 @@ Liquid Glass:
   # Custom
   mcg-title-letter-spacing: 0.08em
 
-  uix-grid-section: |
-    /* Every section becomes a rounded "cloud" of liquid glass */
-    :host {
-      background: var(--ha-card-background);
-      backdrop-filter: var(--ha-card-backdrop-filter);
-      border-radius: var(--ha-section-border-radius, 40px);
-      box-shadow: var(--ha-card-box-shadow);
-      padding: 16px;
-    }
-
   card-mod-theme: "Liquid Glass"
   card-mod-sidebar: |
     :host {
