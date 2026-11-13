@@ -132,28 +132,27 @@ Liquid Glass:
         background: rgba(255, 255, 255, 0.18);
       }
     }
-  card-mod-card-yaml: |
-    .: |
-      ha-card {
-        backdrop-filter: unset !important;
-      }
-      ha-card::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        backdrop-filter: var(--ha-card-backdrop-filter);
-        z-index: -1;
-        pointer-events: none;
-        border-radius: inherit;
-        box-shadow: var(--ha-card-box-shadow);
-      }
-      /* Heading card stays transparent, no glass rim */
-      :host(hui-heading-card) ha-card {
-        background: none !important;
-        backdrop-filter: none !important;
-        box-shadow: none !important;
-      }
-      :host(hui-heading-card) ha-card::before {
-        content: none !important;
-        box-shadow: none !important;
-      }
+  card-mod-card: |
+    ha-card {
+      backdrop-filter: unset !important;
+    }
+    ha-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      z-index: -1;
+      pointer-events: none;
+      border-radius: inherit;
+      box-shadow: var(--ha-card-box-shadow);
+    }
+    /* Heading card stays transparent, no glass rim */
+    :host(hui-heading-card) ha-card {
+      background: none !important;
+      backdrop-filter: none !important;
+      box-shadow: none !important;
+    }
+    :host(hui-heading-card) ha-card::before {
+      content: none !important;
+      box-shadow: none !important;
+    }
