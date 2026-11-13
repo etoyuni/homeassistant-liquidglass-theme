@@ -63,7 +63,7 @@ Liquid Glass:
     0 0 2px 0 rgba(0, 0, 0, 0.10)
 
   # Sections (HA 2026.4+, used by the native section background option)
-  ha-section-background-color: var(--ha-card-background)
+  ha-section-background-color: transparent
   ha-section-border-radius: 40px
 
   # Colors
