@@ -91,6 +91,17 @@ Liquid Glass:
     }
 
   card-mod-theme: "Liquid Glass"
+  card-mod-sidebar: |
+    :host {
+      background: none !important;
+    }
+    /* Remove dividers in the sidebar menu */
+    .menu {
+      border-bottom: none !important;
+    }
+    .divider {
+      display: none !important;
+    }
   app-header-selection-bar-color: transparent
   # Kill the divider between the tab bar and the content
   app-header-border-bottom: none

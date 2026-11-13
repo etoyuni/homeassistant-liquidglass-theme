@@ -169,6 +169,13 @@ visionos:
     :host {
       background: none !important;
     }
+    /* Remove dividers in the sidebar menu */
+    .menu {
+      border-bottom: none !important;
+    }
+    .divider {
+      display: none !important;
+    }
   card-mod-root: |
     /* Dashboard tabs as rounded "cloud" pills (HA < 2025.10: sl-tab, HA >= 2025.10: ha-tab-group-tab) */
     sl-tab,
