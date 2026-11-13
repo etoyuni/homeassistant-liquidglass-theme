@@ -60,6 +60,9 @@ visionos:
   ha-card-border-width: 0 # https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/82#event-7732695357
   ha-card-backdrop-filter: blur(20px)
   ha-card-box-shadow: 0.5px 0.5px 1px 0px rgba(255, 255, 255, 0.40) inset, -0.5px -0.5px 1px 0px rgba(255, 255, 255, 0.10) inset, 0px 1px 2px 0px rgba(0, 0, 0, 0.10)
+  # Sections (HA 2026.4+, used by the native section background option)
+  ha-section-background-color: var(--ha-card-background)
+  ha-section-border-radius: 28px
   # Toggles
   paper-toggle-button-checked-button-color: "#484848"
   paper-toggle-button-checked-bar-color: "#484848"
@@ -140,6 +143,16 @@ visionos:
   wa-border-radius-m: var(--ha-card-border-radius)
   ha-color-on-neutral-normal: var(--primary-text-color) # icon color
   wa-color-neutral-fill-normal: "#FFFFFF14" # hover color
+
+  uix-grid-section: |
+    /* Every section becomes a rounded "cloud" of liquid glass */
+    :host {
+      background: var(--ha-card-background);
+      backdrop-filter: var(--ha-card-backdrop-filter);
+      border-radius: var(--ha-section-border-radius, var(--ha-border-radius-xl));
+      box-shadow: var(--ha-card-box-shadow);
+      padding: 12px;
+    }
 
   card-mod-theme: "visionos"
   card-mod-drawer: |
